@@ -11,47 +11,45 @@ using std::stringstream;
 
 Carro::Carro(){
     nombre="";
-    numero="";
-    chasis=Chasis();
-    motor=Motor();
-    pintura=Pintura();
+    chasis=new Chasis();
+    motor=new Motor();
+    pintura=new Pintura();
 }
 
-Carro::Carro(Chasis nChasis, Motor nMotor, Pintura nPintura, string nnombre, string nnumero)
+Carro::Carro(Chasis* nChasis, Motor* nMotor, Pintura* nPintura, string nnombre)
 {
     nombre=nnombre;
-    numero=nnumero;
     chasis=nChasis;
     motor=nMotor;
     pintura=nPintura;
 }
 
-Motor Carro::getMotor()
+Motor* Carro::getMotor()
 {
     return motor;
 }
 
-void Carro::setMotor(Motor pMotor)
+void Carro::setMotor(Motor* pMotor)
 {
     motor=pMotor;
 }
 
-Chasis Carro::getChasis()
+Chasis* Carro::getChasis()
 {
     return chasis;
 }
 
-void Carro::setChasis(Chasis pchasis)
+void Carro::setChasis(Chasis* pchasis)
 {
     chasis=pchasis;
 }
 
-Pintura Carro::getPintura()
+Pintura* Carro::getPintura()
 {
     return pintura;
 }
 
-void Carro::setPintura(Pintura ppintura)
+void Carro::setPintura(Pintura* ppintura)
 {
     pintura=ppintura;
 }
@@ -65,19 +63,11 @@ void Carro::setNombre(string nnombre){
     nombre=nnombre;
 }
 
-string Carro::getNumero(){
-    return numero;
-}
-
-void Carro::setNumero(string pnumero){
-    numero=pnumero;
-}
-
 string Carro::toString(){
     stringstream retorno;
-    retorno<<"Chasis: \n Ruedas: "<<chasis.toString()<<"\n"<<endl;
-    retorno<<"Motor: \n Electrico: "<<motor.toString()<<"\n"<<endl; 
-    retorno<<"Pintura: \n Color: "<<pintura.toString()<<"\n"<<endl; 
+    retorno<<"Chasis: \n Ruedas: "<<chasis->toString()<<"\n"<<endl;
+    retorno<<"Motor: \n Electrico: "<<motor->toString()<<"\n"<<endl; 
+    retorno<<"Pintura: \n Color: "<<pintura->toString()<<"\n"<<endl; 
     return retorno.str();
 }
 
