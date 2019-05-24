@@ -73,5 +73,7 @@ string Carro::toString(){
 
 Carro::~Carro()
 {
-    
+    delete chasis;
+    delete motor;
+    delete pintura;
 }

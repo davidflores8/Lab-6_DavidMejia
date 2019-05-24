@@ -5,20 +5,28 @@
 #include "Pintura.h"
 #include "Motor.h"
 #include <sstream>
+#include <vector>
+using std::vector;
 using std::stringstream;
 using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
-
+char** crearMatriz(int, int);
+void printMatriz(char**);
 int main()
 {
+    vector<Carro*>todos;
+    char** matriz=NULL;
+    int tam=0;
+    vector<Carro*>ensamblados;
     Carro* carro;
     Motor* motor;
     Pintura* pintura;
     Chasis* chasis;
+    matriz=crearMatriz(5, 4);
     int opcion=0;
-    while(opcion>0 || opcion<4)
+    while(opcion>0 && opcion<4)
     {
         cout<<"Ingrese la opcion que desea: "<<endl;
         cout<<"1. Crear linea de produccion: "<<endl;
@@ -56,15 +64,48 @@ int main()
                 cin>>acabado;
                 pintura=new Pintura(color, acabado);
                 carro=new Carro(chasis, motor, pintura, nombre);
-
-
+                cout<<"Auto agregado exitosamente"<<endl;
+                todos.push_back(carro);
+                matriz[tam][0]='P';
+                tam=tam+1;           
+                printMatriz(matriz);
             }
             break;
+            case 2:
+            {
+                   cout<<"Hola"<<endl; 
+            }
                 
         }
+
 
     }
 
 
     return 0;
 }
+
+char** crearMatriz(int size, int tam)
+{
+        char**matriz=NULL;
+        matriz=new char*[size];
+        for(int i=0; i<size;i++)
+        {
+                matriz[i]=new char[tam];
+        }
+        return matriz;
+}
+
+void printMatriz(char** matriz)
+{
+        for(int i=0;i<5;i++)
+        {
+                for(int j=0;j<4;j++)
+                {
+                                cout<<"["<<matriz[i][j]<<"]";
+                }
+                cout<<" "<<endl;
+        }
+}
+
+
