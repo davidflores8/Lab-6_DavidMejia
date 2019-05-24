@@ -9,6 +9,7 @@ class Chasis{
         string ruedas;
         string transmision;
 
+        Chasis();
         Chasis(string, string);
 
         string getRuedas();

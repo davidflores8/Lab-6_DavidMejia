@@ -6,10 +6,14 @@ using std::endl;
 using std::string;
 using std::stringstream;
 
+Pintura::Pintura(){
+
+}
+
 Pintura::Pintura(string p_color, string p_acabado)
 {
-    this->color=p_color;
-    this->acabado=p_acabado;
+    color=p_color;
+    acabado=p_acabado;
 }
 
 string Pintura::getColor(){
@@ -35,7 +39,7 @@ string Pintura::toString(){
 }
 
 
-Chasis::~Chasis()
+Pintura::~Pintura()
 {
 
 }

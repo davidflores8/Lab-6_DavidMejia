@@ -6,10 +6,14 @@ using std::endl;
 using std::string;
 using std::stringstream;
 
+Motor::Motor(){
+
+}
+
 Motor::Motor(string p_electrico, string p_configuracion)
 {
-    this->electrico=p_electrico;
-    this->configuracion=p_configuracion;
+    electrico=p_electrico;
+    configuracion=p_configuracion;
 }
 
 string Motor::getElectrico(){

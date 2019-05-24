@@ -13,8 +13,11 @@ class Carro{
         Chasis chasis;
         Motor motor;
         Pintura pintura;
+        string nombre;
+        string numero;
 
-        Carro(Chasis n_chasis, Motor n_motor, Pintura n_pintura);
+        Carro();
+        Carro(Chasis, Motor, Pintura, string, string);
 
         Chasis getChasis();
         void setChasis(Chasis);
@@ -22,6 +25,10 @@ class Carro{
         void setMotor(Motor);
         Pintura getPintura();
         void setPintura(Pintura);
+        string getNombre();
+        void setNombre(string);
+        string getNumero();
+        void setNumero(string);
 
         string toString();
 

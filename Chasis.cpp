@@ -6,10 +6,14 @@ using std::endl;
 using std::string;
 using std::stringstream;
 
+Chasis::Chasis(){
+
+}
+
 Chasis::Chasis(string p_ruedas, string p_transmision)
 {
-    this->ruedas=p_ruedas;
-    this->transmision=p_transmision;
+    ruedas=p_ruedas;
+    transmision=p_transmision;
 }
 
 string Chasis::getRuedas(){

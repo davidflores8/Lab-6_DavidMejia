@@ -9,7 +9,7 @@ class Motor{
     public:
         string electrico;
         string configuracion;
-
+        Motor();
         Motor(string, string);
 
         string getElectrico();

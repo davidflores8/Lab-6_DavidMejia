@@ -10,15 +10,16 @@ class Pintura{
         string color;
         string acabado;
 
+        Pintura();
         Pintura(string, string);
 
         string getColor();
         void setColor(string);
-        string setAcabado();
+        string getAcabado();
         void setAcabado(string);
         string toString();
 
-        ~Pintura()
+        ~Pintura();
 
 };
 
