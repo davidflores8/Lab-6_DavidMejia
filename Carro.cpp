@@ -65,9 +65,9 @@ void Carro::setNombre(string nnombre){
 
 string Carro::toString(){
     stringstream retorno;
-    retorno<<"Chasis: \n Ruedas: "<<chasis->toString()<<"\n"<<endl;
-    retorno<<"Motor: \n Electrico: "<<motor->toString()<<"\n"<<endl; 
-    retorno<<"Pintura: \n Color: "<<pintura->toString()<<"\n"<<endl; 
+    retorno<<chasis->toString()<<"\n"<<endl;
+    retorno<<motor->toString()<<"\n"<<endl; 
+    retorno<<pintura->toString()<<"\n"<<endl; 
     return retorno.str();
 }
 
