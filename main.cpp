@@ -38,7 +38,7 @@ int main()
         cout<<"2. Avanzar linea de produccion: "<<endl;
         cout<<"3. Ver todos los autos ensamblados correctamente: "<<endl;
         cout<<"4. Salir"<<endl;
-        cin>>opcion;
+        cin>>opcion; 
 
         switch(opcion){
             case 1:
