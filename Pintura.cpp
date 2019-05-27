@@ -41,5 +41,5 @@ string Pintura::toString(){
 
 Pintura::~Pintura()
 {
-
+    
 }

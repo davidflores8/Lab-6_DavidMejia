@@ -71,9 +71,13 @@ int main()
                 carro=new Carro(chasis, motor, pintura, nombre);
                 cout<<"Auto agregado exitosamente"<<endl;
                 todos.push_back(carro);
-                cout<<"TOdos "<<todos.size()<<endl;
+                cout<<"Todos "<<todos.size()<<endl;
                 matriz[tam][0]='P';
                 tam=tam+1;           
+                if(tam==5)
+                {
+                    tam=0;
+                }
                 printMatriz(matriz);
                 cout<<" "<<endl;
                 cout<<" "<<endl;
@@ -90,10 +94,10 @@ int main()
             break;
             case 3:
             {
-                cout<<ensamblados.size()-11<<"tanamo     "<<endl;
+
                 if(ensamblados.size()>0)
                 {
-                    for (int i= 0; i <ensamblados.size()-1; i++)
+                    for (int i= 0; i <ensamblados.size(); i++)
                     {
                         cout<<ensamblados[i]->toString()<<endl;
                     }
@@ -108,14 +112,16 @@ int main()
             }
             case 4:
             {
-                for (int i = 0; i <todos.size()-1; i++)
+                for (int i = 0; i <todos.size(); i++)
                 {
                     delete todos[i];
                 }
-                for (int i = 0; i <ensamblados.size()-1; i++)
+                todos.clear();
+                for (int i = 0; i <ensamblados.size(); i++)
                 {
                     delete ensamblados[i];
                 }
+                todos.clear();
                 opcion=10;                
             }
                 
@@ -128,6 +134,7 @@ int main()
 
 char** Avanzar(char**matriz){
     int c=0;
+    int cont=0;
     int fila;
     for (int i = 0; i <5; i++)
     {
@@ -136,25 +143,31 @@ char** Avanzar(char**matriz){
         {
             if(matriz[i][0]=='P' && matriz[i][t]==' ')
             {
-             
                 matriz[i][t]='C';
                 t=5;
             }      
         }
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 0; i < 4; i++)
-            {
-                if(matriz[i][j]!=' '){
-                    c=c+1;
-            }
-            if(c==4){
-                ensamblados.push_back(todos[i]);
-            }
-
+    }        
+    for (int j = 0; j < 5; j++)
+    {   
+       for (int k= 0; k < 4; k++)
+        {                
+           if(matriz[j][k]!=' '){
+                c=c+1;
+                cont=cont+1;
+            }                
+                if(c==4){
+                cout<<"El auto ha sido ensamblado corectamente"<<endl;
+                ensamblados.push_back(todos[j]);
+                for (int h = 0; h < 4; h++)
+                {
+                    matriz[j][h]=' ';
+                }
+                
+                }
         }
-        
-        }
+        c=0;
+        cont=0;
     }
     return matriz;
     

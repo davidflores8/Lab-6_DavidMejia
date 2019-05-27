@@ -41,5 +41,5 @@ string Motor::toString(){
 
 Motor::~Motor()
 {
-
+    
 }
